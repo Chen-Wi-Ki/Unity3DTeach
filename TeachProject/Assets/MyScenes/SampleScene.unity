@@ -1140,6 +1140,8 @@ MonoBehaviour:
   _Floor1MoveEvent: {fileID: 510824535}
   _Square1MoveEvent: {fileID: 1605903835}
   PanelObj: {fileID: 773927493}
+  _Square2TriggerEvent: {fileID: 1689958074}
+  _Text: {fileID: 200391525}
 --- !u!1 &1605903829
 GameObject:
   m_ObjectHideFlags: 0
