@@ -11,12 +11,15 @@ public class QuitButtonEvent : MonoBehaviour
 
     public Square2TriggerEvent _Square2TriggerEvent;
     public Text _Text;
+    
     public void QuitEvent()
     {
         PanelObj.SetActive(true);
         _Floor1MoveEvent.enabled = false;
         _Square1MoveEvent.enabled = false;
         gameObject.SetActive(false);
+
+        PanelObj.GetComponent<PanelAutoExitEvent>().CallAutoExitEvent();
 
         switch (_Square2TriggerEvent.Level)
         {
