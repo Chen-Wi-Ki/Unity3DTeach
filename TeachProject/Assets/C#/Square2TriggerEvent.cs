@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Square2TriggerEvent : MonoBehaviour
 {
-    public GameObject NewSquare2;
     Vector3 NewObjLocation;
     public int Level;
     private void Start()
