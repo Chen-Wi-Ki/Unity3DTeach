@@ -7,6 +7,7 @@ public class PanelAutoExitEvent : MonoBehaviour
 {
     public Text TimeText;
     public GameObject StartButtonObj;
+    public Square2TriggerEvent _Square2TriggerEvent;
     // Start is called before the first frame update
     public void CallAutoExitEvent()
     {
@@ -27,6 +28,8 @@ public class PanelAutoExitEvent : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         TimeText.text = "1";
         yield return new WaitForSeconds(1.0f);
+
+        _Square2TriggerEvent.ReStart();
         gameObject.SetActive(false);
         StartButtonObj.SetActive(true);
     }

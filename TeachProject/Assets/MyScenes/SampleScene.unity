@@ -926,6 +926,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeText: {fileID: 2043112750}
   StartButtonObj: {fileID: 428496979}
+  _Square2TriggerEvent: {fileID: 1689958074}
 --- !u!1 &924087553
 GameObject:
   m_ObjectHideFlags: 0
