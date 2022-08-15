@@ -6,6 +6,12 @@ public class Square2TriggerEvent : MonoBehaviour
 {
     public GameObject NewSquare2;
     Vector3 NewObjLocation;
+    public int Level;
+
+    private void Start()
+    {
+        Level = 13;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -30,6 +36,8 @@ public class Square2TriggerEvent : MonoBehaviour
             //Destroy(gameObject);
             transform.localScale = new Vector3(transform.localScale.x / 1.5f, transform.localScale.y / 1.5f, transform.localScale.z);
             transform.position = NewObjLocation;
+            Level = Level - 1;
+            print(Level);
         }
     }
 }
