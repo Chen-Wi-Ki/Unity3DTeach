@@ -15,7 +15,7 @@ public class Floor1MoveEvent : MonoBehaviour
     {
         if (Input.GetKey("up"))
         {
-            if (transform.position.y <= 4.75)
+            if (transform.position.y <= 3.8)
             {
                 transform.position = new Vector3(transform.position.x , transform.position.y + Time.deltaTime * 25, transform.position.z);
             }
@@ -23,7 +23,7 @@ public class Floor1MoveEvent : MonoBehaviour
 
         if (Input.GetKey("down"))
         {
-            if (transform.position.y >= -5.1)
+            if (transform.position.y >= -4.5)
             {
                 transform.position = new Vector3(transform.position.x , transform.position.y - Time.deltaTime * 25, transform.position.z);
             }
