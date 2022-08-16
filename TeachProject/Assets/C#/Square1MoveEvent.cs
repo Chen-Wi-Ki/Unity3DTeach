@@ -19,7 +19,7 @@ public class Square1MoveEvent : MonoBehaviour
         {
             if (transform.position.x <= 8.4)
             {
-                transform.position = new Vector3(transform.position.x + 0.05f, transform.position.y, transform.position.z);
+                transform.position = new Vector3(transform.position.x + Time.deltaTime*25, transform.position.y, transform.position.z);
             }
             else
             {
@@ -31,7 +31,7 @@ public class Square1MoveEvent : MonoBehaviour
         {
             if (transform.position.x >= -8.4)
             {
-                transform.position = new Vector3(transform.position.x - 0.05f, transform.position.y, transform.position.z);
+                transform.position = new Vector3(transform.position.x - Time.deltaTime * 25, transform.position.y, transform.position.z);
             }
             else
             {

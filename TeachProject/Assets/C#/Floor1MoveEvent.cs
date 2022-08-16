@@ -17,7 +17,7 @@ public class Floor1MoveEvent : MonoBehaviour
         {
             if (transform.position.y <= 4.75)
             {
-                transform.position = new Vector3(transform.position.x , transform.position.y + 0.02f, transform.position.z);
+                transform.position = new Vector3(transform.position.x , transform.position.y + Time.deltaTime * 25, transform.position.z);
             }
         }
 
@@ -25,7 +25,7 @@ public class Floor1MoveEvent : MonoBehaviour
         {
             if (transform.position.y >= -5.1)
             {
-                transform.position = new Vector3(transform.position.x , transform.position.y - 0.02f, transform.position.z);
+                transform.position = new Vector3(transform.position.x , transform.position.y - Time.deltaTime * 25, transform.position.z);
             }
         }
     }
