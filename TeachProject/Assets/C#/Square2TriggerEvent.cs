@@ -53,10 +53,7 @@ public class Square2TriggerEvent : MonoBehaviour
             transform.localScale = new Vector3(transform.localScale.x / 1.5f, transform.localScale.y / 1.5f, transform.localScale.z);
             transform.position = NewObjLocation;
             Level = Level - 1;
-            if (_Floor1MoveEvent.RunFlag==true)
-            {
-                _Floor1MoveEvent._SerialPort.WriteLine(Level.ToString());
-            }
+            _Floor1MoveEvent._SerialPort.WriteLine(Level.ToString());
             //print(Level.ToString());
         }
     }
