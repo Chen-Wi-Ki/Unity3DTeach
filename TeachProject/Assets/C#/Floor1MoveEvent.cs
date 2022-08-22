@@ -8,6 +8,7 @@ public class Floor1MoveEvent : MonoBehaviour
 {
     // Start is called before the first frame update
     public SerialPort _SerialPort;
+    public bool RunFlag=false;
     void Start()
     {
         _SerialPort = new SerialPort("COM11",115200);
@@ -40,21 +41,43 @@ public class Floor1MoveEvent : MonoBehaviour
         */
         if (_SerialPort.IsOpen)
         {
-            try 
+            if (RunFlag == true)
             {
-                
-                TempData=float.Parse( _SerialPort.ReadLine())/1000;
-                TempData = ((TempData / 5) * (-6f + 17.5f)) - 17.5f;//mapping 0~5  ->  -6~-17.5
-                //print(TempData);
-                if (TempData < -15f)//High Filter
+                try
                 {
-                    TempData = -15f;
+
+                    TempData = float.Parse(_SerialPort.ReadLine()) / 1000;
+                    TempData = ((TempData / 5) * (-6f + 17.5f)) - 17.5f;//mapping 0~5  ->  -6~-17.5
+                                                                        //print(TempData);
+                    if (TempData < -15f)//High Filter
+                    {
+                        TempData = -15f;
+                    }
+                    transform.position = new Vector3(transform.position.x, TempData, transform.position.z);
                 }
-                transform.position = new Vector3(transform.position.x, TempData, transform.position.z);
+                catch (TimeoutException)
+                {
+                    //Debug.Log("overflow!");
+                }
             }
-            catch (TimeoutException)
+            else
             {
-                //Debug.Log("overflow!");
+                try
+                {
+
+                    TempData = float.Parse(_SerialPort.ReadLine()) / 1000;
+                    TempData = ((TempData / 5) * (-6f + 17.5f)) - 17.5f;//mapping 0~5  ->  -6~-17.5
+                                                                        //print(TempData);
+                    if (TempData < -15f)//High Filter
+                    {
+                        TempData = -15f;
+                    }
+                    //transform.position = new Vector3(transform.position.x, TempData, transform.position.z);
+                }
+                catch (TimeoutException)
+                {
+                    //Debug.Log("overflow!");
+                }
             }
         }
         GC.Collect();
@@ -62,6 +85,7 @@ public class Floor1MoveEvent : MonoBehaviour
 
     private void OnDisable()
     {
+        _SerialPort.WriteLine("13");
         _SerialPort.Close();
     }
 }

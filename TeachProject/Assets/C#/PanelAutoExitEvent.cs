@@ -32,5 +32,6 @@ public class PanelAutoExitEvent : MonoBehaviour
         _Square2TriggerEvent.ReStart();
         gameObject.SetActive(false);
         StartButtonObj.SetActive(true);
+        
     }
 }

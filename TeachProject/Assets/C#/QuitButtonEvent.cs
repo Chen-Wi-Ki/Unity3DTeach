@@ -15,7 +15,7 @@ public class QuitButtonEvent : MonoBehaviour
     public void QuitEvent()
     {
         PanelObj.SetActive(true);
-        _Floor1MoveEvent.enabled = false;
+        _Floor1MoveEvent.RunFlag = false;
         _Square1MoveEvent.enabled = false;
         gameObject.SetActive(false);
 

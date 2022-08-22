@@ -15,8 +15,9 @@ public class Square2TriggerEvent : MonoBehaviour
     public void ReStart()
     {
         Level = 12;
+        _Floor1MoveEvent._SerialPort.WriteLine(Level.ToString());
         transform.localScale = new Vector3(2/ 1.5f, 2/ 1.5f, transform.localScale.z);
-        print("Rest Level to " + Level);
+        //print("Rest Level to " + Level);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -52,7 +53,7 @@ public class Square2TriggerEvent : MonoBehaviour
             transform.localScale = new Vector3(transform.localScale.x / 1.5f, transform.localScale.y / 1.5f, transform.localScale.z);
             transform.position = NewObjLocation;
             Level = Level - 1;
-            if (_Floor1MoveEvent.enabled==true)
+            if (_Floor1MoveEvent.RunFlag==true)
             {
                 _Floor1MoveEvent._SerialPort.WriteLine(Level.ToString());
             }
