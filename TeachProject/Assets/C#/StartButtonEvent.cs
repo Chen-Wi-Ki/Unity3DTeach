@@ -10,7 +10,7 @@ public class StartButtonEvent : MonoBehaviour
     public void StartEvent()
     {
         ButtonQuitObj.SetActive(true);
-        _Floor1MoveEvent.enabled=true;
+        _Floor1MoveEvent.RunFlag= true;
         _Square1MoveEvent.enabled=true;
         gameObject.SetActive(false);
     }
