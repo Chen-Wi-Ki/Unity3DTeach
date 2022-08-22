@@ -18,7 +18,7 @@ public class ChartEvent : MonoBehaviour
         Mychart.DataSource.ClearCategory("UpEvent");
         Mychart.DataSource.ClearCategory("DownEvent");
 
-        _SerialPort = new SerialPort("COM7", 115200);
+        _SerialPort = new SerialPort("COM11", 115200);
         _SerialPort.Open();
         _SerialPort.ReadTimeout = 10;
         _SerialPort.RtsEnable = true;
@@ -54,17 +54,18 @@ public class ChartEvent : MonoBehaviour
             try
             {
                 TempData = float.Parse(_SerialPort.ReadLine()) / 1000;
-
+                TempData = float.Parse(_SerialPort.ReadLine()) / 1000;
                 Mychart.DataSource.AddPointToCategoryRealtime("AnalogEvent", Time_x, TempData);
-
-                GC.Collect();
+                //print(TempData);
+                //GC.Collect();
             }
             catch
             {
                 Debug.Log("overflow!");
-                GC.Collect();
+                //GC.Collect();
             }
         }
+        GC.Collect();
         Time_x++;
     }
 

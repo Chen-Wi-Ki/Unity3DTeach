@@ -491,7 +491,7 @@ MonoBehaviour:
     markDepth:
       Automatic: 1
       Value: 0.5
-    markThickness: 3
+    markThickness: 1
     textPrefab: {fileID: 0}
     textPrefix: 
     textSuffix: 
@@ -500,7 +500,7 @@ MonoBehaviour:
     fontSharpness: 3
     textDepth: 0
     textSeperation: -13.17
-    alignment: 1
+    alignment: 2
   subDivisions:
     messure: 0
     unitsPerDivision: 0
@@ -518,7 +518,7 @@ MonoBehaviour:
     markDepth:
       Automatic: 1
       Value: 0.5
-    markThickness: 3
+    markThickness: 1
     textPrefab: {fileID: 0}
     textPrefix: 
     textSuffix: 
@@ -527,7 +527,7 @@ MonoBehaviour:
     fontSharpness: 3
     textDepth: 0
     textSeperation: -13.17
-    alignment: 1
+    alignment: 2
 --- !u!114 &1321848394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,7 +563,7 @@ MonoBehaviour:
     markDepth:
       Automatic: 1
       Value: 0.5
-    markThickness: 2
+    markThickness: 1
     textPrefab: {fileID: 0}
     textPrefix: 
     textSuffix: 
@@ -590,7 +590,7 @@ MonoBehaviour:
     markDepth:
       Automatic: 1
       Value: 0.5
-    markThickness: 2
+    markThickness: 1
     textPrefab: {fileID: 0}
     textPrefix: 
     textSuffix: 
@@ -622,7 +622,7 @@ MonoBehaviour:
   vRSpaceScale: 0.1
   maintainLabelSize: 0
   autoScrollHorizontally: 1
-  horizontalScrolling: -490
+  horizontalScrolling: -290
   autoScrollVertically: 0
   verticalScrolling: 0
   raycastTarget: 1
@@ -648,7 +648,7 @@ MonoBehaviour:
     automaticVerticallView: 0
     automaticcHorizontaViewGap: 0
     automaticHorizontalView: 0
-    horizontalViewSize: 500
+    horizontalViewSize: 300
     horizontalViewOrigin: 0
     verticalViewSize: 5
     verticalViewOrigin: 0

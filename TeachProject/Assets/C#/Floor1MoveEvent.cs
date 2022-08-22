@@ -47,7 +47,7 @@ public class Floor1MoveEvent : MonoBehaviour
                 {
 
                     TempData = float.Parse(_SerialPort.ReadLine()) / 1000;
-                    TempData = ((TempData / 5) * (-6f + 17.5f)) - 17.5f;//mapping 0~5  ->  -6~-17.5
+                    TempData = ((TempData / 5) * (-6f + 20f)) - 20f;//mapping 0~5  ->  -6~-20
                                                                         //print(TempData);
                     if (TempData < -15f)//High Filter
                     {
