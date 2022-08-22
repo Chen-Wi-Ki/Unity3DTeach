@@ -744,7 +744,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510824531}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbe8f43620217744f88fcecf8390d8e2, type: 3}
   m_Name: 
@@ -1429,6 +1429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b524758ea99b4a489887e2c8a6db796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Floor1MoveEvent: {fileID: 510824535}
   Level: 0
 --- !u!1 &2043112748
 GameObject:

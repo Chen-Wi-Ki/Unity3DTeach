@@ -5,6 +5,7 @@ using UnityEngine;
 public class Square2TriggerEvent : MonoBehaviour
 {
     Vector3 NewObjLocation;
+    public Floor1MoveEvent _Floor1MoveEvent;
     public int Level;
     private void Start()
     {
@@ -51,7 +52,8 @@ public class Square2TriggerEvent : MonoBehaviour
             transform.localScale = new Vector3(transform.localScale.x / 1.5f, transform.localScale.y / 1.5f, transform.localScale.z);
             transform.position = NewObjLocation;
             Level = Level - 1;
-            print(Level);
+            _Floor1MoveEvent._SerialPort.WriteLine(Level.ToString());
+            print(Level.ToString());
         }
     }
 }

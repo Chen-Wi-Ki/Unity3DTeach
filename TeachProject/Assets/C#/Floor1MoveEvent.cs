@@ -7,10 +7,10 @@ using System;
 public class Floor1MoveEvent : MonoBehaviour
 {
     // Start is called before the first frame update
-    SerialPort _SerialPort;
+    public SerialPort _SerialPort;
     void Start()
     {
-        _SerialPort = new SerialPort("COM7",115200);
+        _SerialPort = new SerialPort("COM11",115200);
         _SerialPort.Open();
         _SerialPort.ReadTimeout = 10;
         _SerialPort.RtsEnable = true;
@@ -46,9 +46,9 @@ public class Floor1MoveEvent : MonoBehaviour
                 TempData=float.Parse( _SerialPort.ReadLine())/1000;
                 TempData = ((TempData / 5) * (-6f + 17.5f)) - 17.5f;//mapping 0~5  ->  -6~-17.5
                 //print(TempData);
-                if (TempData < -15.5f)//High Filter
+                if (TempData < -15f)//High Filter
                 {
-                    TempData = -15.5f;
+                    TempData = -15f;
                 }
                 transform.position = new Vector3(transform.position.x, TempData, transform.position.z);
             }
